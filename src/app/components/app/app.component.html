@@ -1,56 +1,43 @@
+<ngx-loading-bar [includeSpinner]="false" [color]="'#fe7c1e'"></ngx-loading-bar>
 <div class="container">
-    <app-google-autocomplete (coordinates)="getWeather($event)"></app-google-autocomplete>
-    <!--<button type="button" (click)="getWeather()">-->
-        <!--<span *ngIf="!weather">getData</span>-->
-        <!--<span *ngIf="weather">reload</span>-->
-    <!--</button>-->
-    <div class="row widget-header">
-        <div class="col-4">
-            Погода в <span *ngIf="city">{{ city.name }}</span>
+    <div class="row text-center">
+        <div class="search-component">
+            <app-google-autocomplete (coordinates)="getWeather($event)"></app-google-autocomplete>
+            <button type="button" class="btn btn-reload" (click)="getWeather(city)" *ngIf="city">
+                <img src="img/refresh.svg" class="refresh">
+            </button>
         </div>
-        <div class="col-8">
-            сонышко
+    </div>
+    <div class="widget-container shadow" *ngIf="weather">
+        <div class="row widget-header gradient-bg round-corner-top border">
+            <div class="col-6">
+                <span *ngIf="city">{{ city.name }}</span>
+            </div>
+            <div class="col-6 icons-margin">
+                <img src="{{ img(weather['weather'][0].id)}}" class="weather-icon">
+            </div>
+        </div>
+        <div class="row border">
+            <div class="col-6 degrees">
+                {{ round(weather.main.temp) }}°C
+            </div>
+            <div class="col-3">
+                <div>Ветер</div>
+                <div>Влажность</div>
+                <div>Давление</div>
+            </div>
+            <div class="col-3">
+                <div class="font-weight-bold">{{ weather.wind.speed }} м/c</div>
+                <div class="font-weight-bold">{{ weather.main.humidity }} %</div>
+                <div class="font-weight-bold">{{ weather.main.pressure }} гПА</div>
+            </div>
+        </div>
+        <div class="row gradient-bg round-corner-bot border">
+            <div class="col-12 created-by">
+                Created by Vlad Kabantsov 2018
+            </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-6">
-            15 С
-        </div>
-        <div class="col-3">
-            <div>Чувствуется как</div>
-            <div>Ветер</div>
-            <div>Влажность</div>
-            <div>Давлени</div>
-        </div>
-        <div class="col-3">
-            <div class="font-weight-bold">6 C</div>
-            <div class="font-weight-bold">36 м/c</div>
-            <div class="font-weight-bold">68 %</div>
-            <div class="font-weight-bold">6 гПА</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            07 10 2018
-        </div>
-    </div>
+
 </div>
-<!--<div *ngIf="weather">-->
-<!--<table class="table table-hover">-->
-<!--<tbody>-->
-<!--<tr>-->
-<!--<th scope="row">Температура</th>-->
-<!--<td>15 С</td>-->
-<!--</tr>-->
-<!--<tr>-->
-<!--<th scope="row">Давление</th>-->
-<!--<td>165 гПа</td>-->
-<!--</tr>-->
-<!--<tr>-->
-<!--<th scope="row">Влажность</th>-->
-<!--<td>68%</td>-->
-<!--</tr>-->
-<!--</tbody>-->
-<!--</table>-->
-<!--</div>-->

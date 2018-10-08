@@ -15,13 +15,14 @@ export class WeatherService {
 
     protected _endpoint = 'https://api.openweathermap.org/data/2.5/weather?';
 
+    protected _units = 'metric';
+
     protected errors;
 
     constructor(protected http: HttpClient) {
     }
 
     get key(): string {
-
         return '&APPID=' + this.apiKey;
     }
 
@@ -33,22 +34,19 @@ export class WeatherService {
         this._endpoint = url;
     }
 
+    get units(): string {
+        return '&units=' + this._units;
+    }
+
     getByPlace(place: string): Observable<any> {
 
         return this.http
-            .get<any>(this.endPoint + 'q=' + place + this.key)
-            .pipe(
-                // catchError()
-            );
+            .get<any>(this.endPoint + 'q=' + place + this.units + this.key);
     }
 
     getByCoord(lat: number, lon: number) {
 
         return this.http
-            .get<any>(this.endPoint + 'lat=' + lat + '&lon=' + lon + this.key)
-            .pipe(
-                // catchError()
-                // catchError(this.handleError('getHeroes', []))
-            );
+            .get<any>(this.endPoint + 'lat=' + lat + '&lon=' + lon + this.units + this.key);
     }
 }

@@ -1,3 +1,72 @@
+.row {
+    margin: 0;
+}
+
+body, div, p, span {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 24px;
+}
+
+.gradient-bg {
+    background-image: -webkit-linear-gradient(bottom right, #fe5400,#ffd05c);
+}
+
 .widget-header {
-    background-image: -webkit-linear-gradient(bottom right,#feb020,#ffd05c);
+
+}
+
+.degrees {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.btn-reload {
+    margin-left: 15px;
+}
+
+.refresh {
+    width: 20px;
+    height: 20px;
+}
+
+.search-component {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.widget-container {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.created-by {
+    font-size: 18px;
+}
+
+.round-corner-top {
+    border-radius: 10px 10px 0 0;
+}
+
+.round-corner-bot {
+    border-radius: 0 0 10px 10px;
+}
+
+.border {
+    border: 1px solid #f3f3f3;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.weather-icon {
+    width: 85px;
+    height: 85px;
+}
+
+.icons-margin {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
