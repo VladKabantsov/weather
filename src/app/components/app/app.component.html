@@ -4,7 +4,7 @@
         <div class="search-component">
             <app-google-autocomplete (coordinates)="getWeather($event)"></app-google-autocomplete>
             <button type="button" class="btn btn-reload" (click)="getWeather(city)" *ngIf="city">
-                <img src="img/refresh.svg" class="refresh">
+                <img src="assets/img/refresh.svg" class="refresh">
             </button>
         </div>
     </div>

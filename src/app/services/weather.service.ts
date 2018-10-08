@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {catchError} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
 
 
@@ -9,15 +8,11 @@ import {HttpClient} from '@angular/common/http';
 })
 export class WeatherService {
 
-    protected headersObj = {};
-
     protected apiKey = '53b227864accbbc4ba6d60a2d1075405';
 
     protected _endpoint = 'https://api.openweathermap.org/data/2.5/weather?';
 
     protected _units = 'metric';
-
-    protected errors;
 
     constructor(protected http: HttpClient) {
     }

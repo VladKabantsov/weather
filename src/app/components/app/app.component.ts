@@ -12,16 +12,16 @@ import {LoadingBarService} from '@ngx-loading-bar/core';
 export class AppComponent {
 
     protected images = [
-        {id: 800, src: 'img/sun.svg'},
-        {id: 801, src: 'img/cloudy.svg'},
-        {id: 802, src: 'img/cloud.svg'},
-        {id: 803, src: 'img/cloudy2.svg'},
-        {id: 804, src: 'img/cloudy2.svg'},
-        {id: 2, src: 'img/storm.svg'},
-        {id: 3, src: 'img/rainy.svg'},
-        {id: 5, src: 'img/rainy.svg'},
-        {id: 6, src: 'img/snowy.svg'},
-        {id: 7, src: 'img/fog.svg'},
+        {id: 800, src: 'assets/img/sun.svg'},
+        {id: 801, src: 'assets/img/cloudy.svg'},
+        {id: 802, src: 'assets/img/cloud.svg'},
+        {id: 803, src: 'assets/img/cloudy2.svg'},
+        {id: 804, src: 'assets/img/cloudy2.svg'},
+        {id: 2, src: 'assets/img/storm.svg'},
+        {id: 3, src: 'assets/img/rainy.svg'},
+        {id: 5, src: 'assets/img/rainy.svg'},
+        {id: 6, src: 'assets/img/snowy.svg'},
+        {id: 7, src: 'assets/img/fog.svg'},
     ];
 
     weather: Weather;
